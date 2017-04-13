@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/hashicorp/mdns"
-	"github.com/ninjasphere/go-castv2"
-	"github.com/ninjasphere/go-castv2/controllers"
+	"github.com/kmerabet/mdns"
+	"github.com/kmerabet/go-castv2"
+	"github.com/kmerabet/go-castv2/controllers"
 )
 
 // A simple example, showing how to find a Chromecast using mdns, and request its status.

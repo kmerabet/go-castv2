@@ -22,7 +22,7 @@ func (w *packetStream) readPackets() {
 	var length uint32
 
 	go func() {
-		for {
+		for i := 0; i < 1; i++{
 
 			err := binary.Read(w.stream, binary.BigEndian, &length)
 			if err != nil {

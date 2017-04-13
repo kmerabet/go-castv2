@@ -6,9 +6,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
-	"github.com/ninjasphere/go-castv2"
-	"github.com/ninjasphere/go-castv2/api"
+	//"github.com/davecgh/go-spew/spew"
+	"github.com/kmerabet/go-castv2"
+	"github.com/kmerabet/go-castv2/api"
 )
 
 type ReceiverController struct {
@@ -31,7 +31,7 @@ func NewReceiverController(client *castv2.Client, sourceId, destinationId string
 }
 
 func (c *ReceiverController) onStatus(message *api.CastMessage) {
-	spew.Dump("Got status message", message)
+	//spew.Dump("Got status message", message)
 
 	response := &StatusResponse{}
 
@@ -46,7 +46,7 @@ func (c *ReceiverController) onStatus(message *api.CastMessage) {
 	case c.Incoming <- response.Status:
 		log.Printf("Delivered status")
 	case <-time.After(time.Second):
-		log.Printf("Incoming status, but we aren't listening. %v", response.Status)
+		//log.Printf("Incoming status, but we aren't listening: \n--> %v", response.Status)
 	}
 
 }
